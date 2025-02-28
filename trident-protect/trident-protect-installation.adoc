@@ -1,0 +1,241 @@
+---
+sidebar: sidebar 
+permalink: trident-protect/trident-protect-installation.html 
+keywords: install, trident, protect, requirements, registry 
+summary: 環境が要件を満たしている場合は、次の手順に従ってTrident Protectをインストールできます。 
+---
+= Trident保護のインストールと設定
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ご使用の環境がTrident保護の要件を満たしている場合は、次の手順に従ってクラスタにTrident保護をインストールします。NetAppからTrident protectを取得するか、独自のプライベートレジストリからインストールできます。プライベートレジストリからインストールすると、クラスタがインターネットにアクセスできない場合に役立ちます。
+
+
+NOTE: デフォルトでは、Trident protectは、クラスタと管理対象アプリケーションに関するログ、指標、トポロジ情報など、NetAppサポートケースをオープンする際に役立つサポート情報を収集します。Trident PROTECTは、これらのサポートバンドルを日次スケジュールでNetAppに送信します。Trident protectのインストール時に、必要に応じてこのサポートバンドル収集を無効にすることができます。いつでも手動で行うことができlink:trident-protect-generate-support-bundle.html["サポートバンドルの生成"]ます。
+
+
+
+== Tridentプロテクトのインストール
+
+[role="tabbed-block"]
+====
+.Trident protect from NetAppのインストール
+--
+.手順
+. Trident Helmリポジトリを追加します。
++
+[source, console]
+----
+helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
+----
+. TridentプロテクトCRDをインストールします。
++
+[source, console]
+----
+helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
+----
+. 次のいずれかのコマンドを使用して、Helmを使用してTrident protectをインストールします。をクラスタ名に置き換えます `<name_of_cluster>`。クラスタに割り当てられ、クラスタのバックアップとスナップショットの識別に使用されます。
++
+** Trident保護を通常どおりインストールします。
++
+[source, console]
+----
+helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect
+----
+** Trident protectをインストールし、Trident protect AutoSupportサポートバンドルのスケジュールされた毎日のアップロードを無効にします。
++
+[source, console]
+----
+helm install trident-protect netapp-trident-protect/trident-protect --set autoSupport.enabled=false --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect
+----
+
+
+
+
+--
+.Trident protectをプライベートレジストリからインストールする
+--
+Kubernetesクラスタがインターネットにアクセスできない場合は、プライベートイメージレジストリからTrident protectをインストールできます。次の例では、括弧内の値を環境の情報に置き換えます。
+
+.手順
+. 次のイメージをローカルマシンにプルし、タグを更新して、プライベートレジストリにプッシュします。
++
+[source, console]
+----
+netapp/controller:24.10.1
+netapp/restic:24.10.1
+netapp/kopia:24.10.1
+netapp/trident-autosupport:24.10.0
+netapp/exechook:24.10.1
+netapp/resourcebackup:24.10.1
+netapp/resourcerestore:24.10.1
+netapp/resourcedelete:24.10.1
+bitnami/kubectl:1.30.2
+kubebuilder/kube-rbac-proxy:v0.16.0
+----
++
+例：
+
++
+[source, console]
+----
+docker pull netapp/controller:24.10.1
+----
++
+[source, console]
+----
+docker tag netapp/controller:24.10.1 <private-registry-url>/controller:24.10.1
+----
++
+[source, console]
+----
+docker push <private-registry-url>/controller:24.10.1
+----
+. Trident protect systemネームスペースを作成します。
++
+[source, console]
+----
+kubectl create ns trident-protect
+----
+. レジストリにログインします。
++
+[source, console]
+----
+helm registry login <private-registry-url> -u <account-id> -p <api-token>
+----
+. プライベートレジストリ認証に使用するプルシークレットを作成します。
++
+[source, console]
+----
+kubectl create secret docker-registry regcred --docker-username=<registry-username> --docker-password=<api-token> -n trident-protect --docker-server=<private-registry-url>
+----
+. Trident Helmリポジトリを追加します。
++
+[source, console]
+----
+helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
+----
+. という名前のファイルを作成します `protectValues.yaml`。次のTrident保護設定が含まれていることを確認します。
++
+[source, yaml]
+----
+---
+image:
+  registry: <private-registry-url>
+imagePullSecrets:
+  - name: regcred
+controller:
+  image:
+    registry: <private-registry-url>
+rbacProxy:
+  image:
+    registry: <private-registry-url>
+crCleanup:
+  imagePullSecrets:
+    - name: regcred
+webhooksCleanup:
+  imagePullSecrets:
+    - name: regcred
+----
+. TridentプロテクトCRDをインストールします。
++
+[source, console]
+----
+helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
+----
+. 次のいずれかのコマンドを使用して、Helmを使用してTrident protectをインストールします。をクラスタ名に置き換えます `<name_of_cluster>`。クラスタに割り当てられ、クラスタのバックアップとスナップショットの識別に使用されます。
++
+** Trident保護を通常どおりインストールします。
++
+[source, console]
+----
+helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect -f protectValues.yaml
+----
+** Trident protectをインストールし、Trident protect AutoSupportサポートバンドルのスケジュールされた毎日のアップロードを無効にします。
++
+[source, console]
+----
+helm install trident-protect netapp-trident-protect/trident-protect --set autoSupport.enabled=false --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect -f protectValues.yaml
+----
+
+
+
+
+--
+====
+
+
+== Trident保護コンテナのリソース制限を指定
+
+Trident保護のインストール後に、構成ファイルを使用してTrident保護コンテナのリソース制限を指定できます。リソース制限を設定すると、Trident保護処理で消費されるクラスタのリソースの量を制御できます。
+
+.手順
+. という名前のファイルを作成します `resourceLimits.yaml`。
+. 環境のニーズに応じて、Trident保護コンテナのリソース制限オプションをファイルに入力します。
++
+次の構成ファイルの例は、使用可能な設定を示しています。このファイルには、各リソース制限のデフォルトの変数が含まれています。
+
++
+[source, yaml]
+----
+---
+jobResources:
+  defaults:
+    limits:
+      cpu: 8000m
+      memory: 10000Mi
+      ephemeralStorage: ""
+    requests:
+      cpu: 100m
+      memory: 100Mi
+      ephemeralStorage: ""
+  resticVolumeBackup:
+    limits:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+    requests:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+  resticVolumeRestore:
+    limits:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+    requests:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+  kopiaVolumeBackup:
+    limits:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+    requests:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+  kopiaVolumeRestore:
+    limits:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+    requests:
+      cpu: ""
+      memory: ""
+      ephemeralStorage: ""
+----
+. ファイルから値を適用し `resourceLimits.yaml`ます。
++
+[source, console]
+----
+helm upgrade trident-protect -n trident-protect -f <resourceLimits.yaml> --reuse-values
+----
+

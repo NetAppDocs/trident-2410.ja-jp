@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: trident-get-started/requirements.html 
+keywords: trident requirements, supported front ends, supported backends, kubernetes cluster, cluster requirements, version requirements, supported versions, host configuration, host os, system configuration, host operating system, fsx, ports, csi, images, orchestrators, storage systems, feature, kubernetes 
+summary: Tridentをインストールする前に、これらの一般的なシステム要件を確認してください。個 々 のバックエンドには追加の要件がある場合があり 
+---
+= 要件
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tridentをインストールする前に、これらの一般的なシステム要件を確認してください。個 々 のバックエンドには追加の要件がある場合があり
+
+
+
+== Tridentに関する重要な情報
+
+* Tridentに関する次の重要な情報をお読みください。*
+
+.Trident </strong>に関する<strong>の重要な情報
+[%collapsible%open]
+====
+[]
+=====
+* TridentでKubernetes 1.32がサポートされるようになりました。Kubernetesをアップグレードする前にTridentをアップグレード
+* Tridentでは、SAN環境でのマルチパス構成の使用が厳密に適用されます。multipath.confファイルの推奨値はです `find_multipaths: no`。
++
+マルチパス以外の構成を使用するか、multipath.confファイルにまたは `find_multipaths: smart`の値を使用する `find_multipaths: yes`と、マウントが失敗します。Tridentでは、21.07リリース以降での使用を推奨してい `find_multipaths: no`ます。
+
+
+
+=====
+====
+
+
+== サポートされるフロントエンド（オーケストレーションツール）
+
+Tridentは、次のような複数のコンテナエンジンとオーケストレーションツールをサポートしています。
+
+* Anthosオンプレミス（VMware）とAnthos（ベアメタル1.16）
+* Kubernetes 1.25~1.32
+* OpenShift 4.10-4.17
+* Rancher Kubernetes Engine 2（RKE2）v1.28.5 + rke2r1
+
+
+Trident オペレータは、次のリリースでサポートされています。
+
+* Anthosオンプレミス（VMware）とAnthos（ベアメタル1.16）
+* Kubernetes 1.25~1.32
+* OpenShift 4.10-4.17
+* Rancher Kubernetes Engine 2（RKE2）v1.28.5 + rke2r1
+
+
+Tridentは、Google Kubernetes Engine（GKE）、Amazon Elastic Kubernetes Services（EKS）、Azure Kubernetes Service（AKS）、Mirantis Kubernetes Engine（MKE）、VMware Tanzu Portfolioなど、他のフルマネージド/自己管理型Kubernetesソリューションとも連携します。
+
+TridentとONTAPは、のストレージプロバイダとして使用できますlink:https://kubevirt.io/["KubeVirt"]。
+
+
+WARNING: TridentがインストールされているKubernetesクラスタを1.24から1.25以降にアップグレードする前に、を参照してくださいlink:../trident-managing-k8s/upgrade-operator.html#upgrade-a-helm-installation["Helmインストールのアップグレード"]。
+
+
+
+== サポートされるバックエンド（ストレージ）
+
+Tridentを使用するには、次のサポートされているバックエンドが1つ以上必要です。
+
+* NetApp ONTAP 対応の Amazon FSX
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud NetAppボリューム
+* FAS/AFF / Select 9.5以降
+* ネットアップオール SAN アレイ（ ASA ）
+* NetApp HCI / Elementソフトウェア11以降
+
+
+
+
+== 機能の要件
+
+次の表は、このリリースのTridentで使用できる機能と、このリリースでサポートされるKubernetesのバージョンをまとめたものです。
+
+[cols="3"]
+|===
+| 機能 | Kubernetes のバージョン | フィーチャーゲートが必要ですか？ 
+
+
+| Trident  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| ボリューム Snapshot  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| ボリューム Snapshot からの PVC  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| iSCSI PV のサイズ変更  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| ONTAP 双方向 CHAP  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| 動的エクスポートポリシー  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| Trident のオペレータ  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+
+
+| CSI トポロジ  a| 
+1.25 ~ 1.32
+ a| 
+いいえ
+
+|===
+
+
+== テスト済みのホストオペレーティングシステム
+
+Tridentは特定のオペレーティングシステムを正式にサポートしていませんが、次の機能が動作することがわかっています。
+
+* OpenShift Container Platform（AMD64およびARM64）でサポートされているRed Hat CoreOS（RHCOS）のバージョン
+* RHEL 8+（AMD64およびARM64）
++
+
+NOTE: NVMe/TCPにはRHEL 9以降が必要です。
+
+* Ubuntu 22.04以降（AMD64およびARM64）
+* Windows Server 2022
+
+
+デフォルトでは、Tridentはコンテナ内で実行されるため、どのLinuxワーカーでも実行されます。ただし、使用しているバックエンドに応じて、Tridentが提供するボリュームを、標準のNFSクライアントまたはiSCSIイニシエータを使用してマウントできる必要があります。
+
+この `tridentctl`ユーティリティは、これらのLinuxディストリビューションのいずれでも実行できます。
+
+
+
+== ホストの設定
+
+Kubernetesクラスタ内のすべてのワーカーノードが、ポッド用にプロビジョニングしたボリュームをマウントできる必要があります。ワーカーノードを準備するには、ドライバの選択に基づいてNFS、iSCSI、またはNVMeのツールをインストールする必要があります。
+
+link:../trident-use/worker-node-prep.html["ワーカーノードを準備します"]
+
+
+
+== ストレージシステムの構成：
+
+バックエンド構成でTridentを使用するには、ストレージシステムの変更が必要になる場合があります。
+
+link:../trident-use/backends.html["バックエンドを設定"]
+
+
+
+== Tridentポート
+
+Tridentでは、通信のために特定のポートにアクセスする必要があります。
+
+link:../trident-reference/ports.html["Tridentポート"]
+
+
+
+== コンテナイメージと対応する Kubernetes バージョン
+
+エアギャップを使用したインストールでは、Tridentのインストールに必要なコンテナイメージの参照先を以下に示します。コマンドを使用し `tridentctl images`て、必要なコンテナイメージのリストを確認します。
+
+[cols="2"]
+|===
+| Kubernetesのバージョン | コンテナイメージ 
+
+
+| v1.25.0、v1.26.0、v1.27.0、v1.28.0、v1.29.0、 v1.30.0、v1.31.0、v1.32.0  a| 
+* Docker .io / NetApp / Trident：24.10.0
+* docker.io / netapp/trident-autosupport：24.10
+* registry.k8s.io/sig-storage/csi-provisioner：v5.1.0
+* registry.k8s.io/sig-storage/csi-attacher：v4.7.0
+* registry.k8s.io/sig-storage/csi-resizer：v1.12.0
+* registry.k8s.io/sig-storage/csi-snapshotter：v8.1.0
+* registry.k8s.io/sig-storage/csi-node-driver-registrar：v2.12.0
+* docker.io/netapp/trident-operator：24.10.0（オプション）
+
+
+|===
