@@ -52,7 +52,7 @@ link:../trident-get-started/kubernetes-deploy.html["インストールの概要"
 ----
 helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
-. を使用し `helm install`、次の例のように導入環境の名前を指定します。 `100.2404.0`は、インストールするTridentのバージョンです。
+. を使用し `helm install`、次の例のように導入環境の名前を指定します。 `100.2410.0`は、インストールするTridentのバージョンです。
 +
 [listing]
 ----
