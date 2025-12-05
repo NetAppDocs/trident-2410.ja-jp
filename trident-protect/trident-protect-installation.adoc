@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-installation.html 
 keywords: install, trident, protect, requirements, registry 
-summary: 環境が要件を満たしている場合は、次の手順に従ってTrident Protectをインストールできます。 
+summary: 環境が要件を満たしている場合は、次の手順に従ってTrident Protect をインストールできます。 
 ---
-= Trident保護のインストールと設定
+= Trident Protectのインストールと設定
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: 環境が要件を満たしている場合は、次の手順に従っ�
 
 
 [role="lead"]
-ご使用の環境がTrident保護の要件を満たしている場合は、次の手順に従ってクラスタにTrident保護をインストールします。NetAppからTrident protectを取得するか、独自のプライベートレジストリからインストールできます。プライベートレジストリからインストールすると、クラスタがインターネットにアクセスできない場合に役立ちます。
+環境がTrident Protect の要件を満たしている場合は、次の手順に従ってクラスターにTrident Protect をインストールできます。Trident Protect はNetAppから入手するか、独自のプライベート レジストリからインストールすることができます。クラスターがインターネットにアクセスできない場合は、プライベート レジストリからインストールすると便利です。
 
 
-NOTE: デフォルトでは、Trident protectは、クラスタと管理対象アプリケーションに関するログ、指標、トポロジ情報など、NetAppサポートケースをオープンする際に役立つサポート情報を収集します。Trident PROTECTは、これらのサポートバンドルを日次スケジュールでNetAppに送信します。Trident protectのインストール時に、必要に応じてこのサポートバンドル収集を無効にすることができます。いつでも手動で行うことができlink:trident-protect-generate-support-bundle.html["サポートバンドルの生成"]ます。
+NOTE: デフォルトでは、 Trident Protect は、クラスターと管理対象アプリケーションに関するログ、メトリック、トポロジ情報など、開く可能性のあるNetAppサポート ケースに役立つサポート情報を収集します。Trident Protect は、これらのサポート バンドルを毎日スケジュールに従ってNetAppに送信します。Trident Protect をインストールするときに、オプションでこのサポート バンドルの収集を無効にすることができます。手動でlink:trident-protect-generate-support-bundle.html["サポートバンドルの生成"]いつでも。
 
 
 
-== Tridentプロテクトのインストール
+== Trident Protectをインストールする
 
 [role="tabbed-block"]
 ====
-.Trident protect from NetAppのインストール
+.NetAppからTrident Protectをインストールする
 --
 .手順
 . Trident Helmリポジトリを追加します。
@@ -40,15 +40,15 @@ helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-he
 ----
 helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-. 次のいずれかのコマンドを使用して、Helmを使用してTrident protectをインストールします。をクラスタ名に置き換えます `<name_of_cluster>`。クラスタに割り当てられ、クラスタのバックアップとスナップショットの識別に使用されます。
+. 次のいずれかのコマンドを使用して、Helm を使用してTrident Protect をインストールします。交換する `<name_of_cluster>`クラスター名。このクラスター名はクラスターに割り当てられ、クラスターのバックアップとスナップショットを識別するために使用されます。
 +
-** Trident保護を通常どおりインストールします。
+** Trident Protect を通常どおりインストールします。
 +
 [source, console]
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-** Trident protectをインストールし、Trident protect AutoSupportサポートバンドルのスケジュールされた毎日のアップロードを無効にします。
+** Trident Protect をインストールし、毎日スケジュールされているTrident Protect AutoSupportサポート バンドルのアップロードを無効にします。
 +
 [source, console]
 ----
@@ -59,9 +59,9 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 
 
 --
-.Trident protectをプライベートレジストリからインストールする
+.プライベートレジストリからTrident Protectをインストールする
 --
-Kubernetesクラスタがインターネットにアクセスできない場合は、プライベートイメージレジストリからTrident protectをインストールできます。次の例では、括弧内の値を環境の情報に置き換えます。
+Kubernetes クラスターがインターネットにアクセスできない場合は、プライベート イメージ レジストリからTrident Protect をインストールできます。これらの例では、括弧内の値を環境の情報に置き換えます。
 
 .手順
 . 次のイメージをローカルマシンにプルし、タグを更新して、プライベートレジストリにプッシュします。
@@ -97,7 +97,7 @@ docker tag netapp/controller:24.10.1 <private-registry-url>/controller:24.10.1
 ----
 docker push <private-registry-url>/controller:24.10.1
 ----
-. Trident protect systemネームスペースを作成します。
+. Trident Protect システム名前空間を作成します。
 +
 [source, console]
 ----
@@ -121,7 +121,7 @@ kubectl create secret docker-registry regcred --docker-username=<registry-userna
 ----
 helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
 ----
-. という名前のファイルを作成します `protectValues.yaml`。次のTrident保護設定が含まれていることを確認します。
+. という名前のファイルを作成します `protectValues.yaml`。次のTrident Protect 設定が含まれていることを確認します。
 +
 [source, yaml]
 ----
@@ -143,21 +143,21 @@ webhooksCleanup:
   imagePullSecrets:
     - name: regcred
 ----
-. TridentプロテクトCRDをインストールします。
+. Trident Protect CRD をインストールします。
 +
 [source, console]
 ----
 helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-. 次のいずれかのコマンドを使用して、Helmを使用してTrident protectをインストールします。をクラスタ名に置き換えます `<name_of_cluster>`。クラスタに割り当てられ、クラスタのバックアップとスナップショットの識別に使用されます。
+. 次のいずれかのコマンドを使用して、Helm を使用してTrident Protect をインストールします。交換する `<name_of_cluster>`クラスター名。このクラスター名はクラスターに割り当てられ、クラスターのバックアップとスナップショットを識別するために使用されます。
 +
-** Trident保護を通常どおりインストールします。
+** Trident Protect を通常どおりインストールします。
 +
 [source, console]
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect -f protectValues.yaml
 ----
-** Trident protectをインストールし、Trident protect AutoSupportサポートバンドルのスケジュールされた毎日のアップロードを無効にします。
+** Trident Protect をインストールし、毎日スケジュールされているTrident Protect AutoSupportサポート バンドルのアップロードを無効にします。
 +
 [source, console]
 ----
@@ -171,13 +171,13 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 ====
 
 
-== Trident保護コンテナのリソース制限を指定
+== Trident Protectコンテナのリソース制限を指定する
 
-Trident保護のインストール後に、構成ファイルを使用してTrident保護コンテナのリソース制限を指定できます。リソース制限を設定すると、Trident保護処理で消費されるクラスタのリソースの量を制御できます。
+Trident Protect をインストールした後、構成ファイルを使用してTrident Protect コンテナーのリソース制限を指定できます。リソース制限を設定すると、 Trident Protect 操作によって消費されるクラスターのリソースの量を制御できます。
 
 .手順
 . という名前のファイルを作成します `resourceLimits.yaml`。
-. 環境のニーズに応じて、Trident保護コンテナのリソース制限オプションをファイルに入力します。
+. 環境のニーズに応じて、 Trident Protect コンテナのリソース制限オプションをファイルに入力します。
 +
 次の構成ファイルの例は、使用可能な設定を示しています。このファイルには、各リソース制限のデフォルトの変数が含まれています。
 

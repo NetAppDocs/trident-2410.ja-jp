@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-appvault-custom-resources.html 
 keywords: trident. appvault, custom, protect, kubernetes 
-summary: Trident保護用のバケットカスタムリソース（CR）は、AppVaultと呼ばれます。AppVaultsは、ストレージバケットの宣言型Kubernetesワークフロー表現です。 
+summary: 'Trident Protect のバケット カスタム リソース (CR) は、AppVault と呼ばれます。AppVault は、ストレージ バケットの宣言型 Kubernetes ワークフロー表現です。' 
 ---
-= Trident protect AppVaultオブジェクトを使用してバケットを管理する
+= Trident Protect AppVault オブジェクトを使用してバケットを管理する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Trident保護用のバケットカスタムリソース（CR）は、Ap
 
 
 [role="lead"]
-Trident保護用のバケットカスタムリソース（CR）は、AppVaultと呼ばれます。AppVaultオブジェクトは、ストレージバケットの宣言型Kubernetesワークフロー表現です。AppVault CRには、バックアップ、Snapshot、リストア処理、SnapMirrorレプリケーションなど、保護処理でバケットを使用するために必要な設定が含まれています。AppVaultsを作成できるのは管理者のみです。
+Trident Protect のバケット カスタム リソース (CR) は、AppVault と呼ばれます。AppVault オブジェクトは、ストレージ バケットの宣言型 Kubernetes ワークフロー表現です。AppVault CR には、バックアップ、スナップショット、復元操作、 SnapMirrorレプリケーションなどの保護操作でバケットを使用するために必要な構成が含まれています。AppVault を作成できるのは管理者のみです。
 
 
 
@@ -232,7 +232,7 @@ spec:
 ====
 
 
-=== Trident保護CLIを使用したAppVaultの作成例
+=== Trident Protect CLI を使用した AppVault 作成例
 
 次のCLIコマンド例を使用して、プロバイダごとにAppVault CRSを作成できます。
 
@@ -285,7 +285,7 @@ tridentctl-protect create vault StorageGridS3 s3vault --bucket <bucket-name> --s
 
 == AppVaultブラウザを使用してAppVault情報を表示する
 
-Trident保護CLIプラグインを使用して、クラスタ上で作成されたAppVaultオブジェクトに関する情報を表示できます。
+Trident Protect CLI プラグインを使用して、クラスター上に作成された AppVault オブジェクトに関する情報を表示できます。
 
 .手順
 . AppVaultオブジェクトの内容を表示します。
@@ -316,7 +316,7 @@ tridentctl-protect get appvaultcontent gcp-vault --show-resources all
 ----
 . 必要に応じて、各リソースのAppVaultPathを表示するには、フラグを使用し `--show-paths`ます。
 +
-テーブルの最初の列に表示されるクラスタ名は、Trident protect helmのインストールでクラスタ名が指定されている場合にのみ使用できます。例： `--set clusterName=production1`。
+表の最初の列にあるクラスター名は、 Trident Protect Helm インストールでクラスター名が指定された場合にのみ使用できます。例えば： `--set clusterName=production1` 。
 
 
 
@@ -345,7 +345,7 @@ kubectl delete appvault <appvault_name> -n trident-protect
 
 
 --
-.Trident保護CLIを使用したAppVaultの削除
+.Trident Protect CLI を使用して AppVault を削除する
 --
 . AppVaultオブジェクトを削除し、削除するAppVaultオブジェクトの名前に置き換え `appvault_name`ます。
 +

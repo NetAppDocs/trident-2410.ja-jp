@@ -43,11 +43,11 @@ indexpage:
       url: "/trident-use/vol-operations.html"
   - title: 高度なデータ管理と保護
     links:
-    - title: Trident保護による高度なデータ保護
+    - title: Trident Protectによる高度なデータ保護
       url: "/trident-protect/learn-about-trident-protect.html"
-    - title: Trident保護の導入
+    - title: Tridentプロテクトを展開
       url: "/trident-protect/trident-protect-installation.html"
-    - title: Trident保護のアップグレード
+    - title: Tridentプロテクトのアップグレード
       url: "/trident-protect/trident-protect-upgrade.html"
   - title: デモとチュートリアル
     links:
