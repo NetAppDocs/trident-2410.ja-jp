@@ -34,7 +34,7 @@ NOTE: デフォルトでは、 Trident Protect は、クラスターと管理対
 ----
 helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
 ----
-. TridentプロテクトCRDをインストールします。
+. Trident Protect CRD をインストールします。
 +
 [source, console]
 ----

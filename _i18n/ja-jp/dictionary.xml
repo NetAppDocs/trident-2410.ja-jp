@@ -1644,7 +1644,6 @@
   <block id="2294988013d14e5c254422b8164d83ad" category="list-text">サポートバンドルを作成し、角かっこ内の値を環境からの情報に置き換えます。は<block ref="769627afa23a2b90f925b1091e474dc5" prefix=" " category="inline-code"></block>、バンドルをすぐに作成するか、スケジュールによって作成時間が指定されているかを決定し、または<block ref="2b7dabba0077abe3732e0418b048a56b" prefix=" " category="inline-code"></block>を指定できます<block ref="e1ba155a9f2e8c3be94020eef32a0301" prefix=" " category="inline-code"></block>。デフォルト設定はです<block ref="e1ba155a9f2e8c3be94020eef32a0301" prefix=" " category="inline-code"></block>。</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例：</block>
   <block id="a268a576db3133de464aad1cd81ab3e1" category="inline-link-macro">サポートバンドルの生成</block>
-  <block id="76d9687f27080e6c2da9c8a0d64fbd42" category="list-text">TridentプロテクトCRDをインストールします。</block>
   <block id="dfb8cfd789dde682f000a96e0aabb1f1" category="list-text">次のイメージをローカルマシンにプルし、タグを更新して、プライベートレジストリにプッシュします。</block>
   <block id="e0f6b701766eb28d805d7ba1e820f582" category="list-text">レジストリにログインします。</block>
   <block id="814565bb5d7e7359fff967986fd4195a" category="list-text">プライベートレジストリ認証に使用するプルシークレットを作成します。</block>
@@ -3007,8 +3006,6 @@
   <block id="5866b98c049a53ea6dc7f50f9349f434" category="list-text">データ移行</block>
   <block id="645a84975202e30700b572b49a5ee29d" category="list-text">ディザスタリカバリ</block>
   <block id="11d5920d0c0b3a97e764f84dc92ef110" category="list-text">アプリケーションのモビリティ</block>
-  <block id="f593e32b2a3ead4ac029c13126d3531d" category="inline-link-macro">Trident protectの詳細</block>
-  <block id="a4ac350fb585f51020f747525f3175d8" category="paragraph"><block ref="2c7a14b5507108d57a83e6eb9858f03a" category="inline-link-macro-rx"></block>です。</block>
   <block id="d28325b08a2b4a8f4af42dc025afe338" category="list-text">TridentがKubernetes APIサーバと通信するために使用するQPS値を設定するための新しいフラグをインストーラに追加しました<block ref="060e82a16c6de7d9a8541fb1da32de80" prefix=" " category="inline-code"></block>。</block>
   <block id="46b4e7bf1e76e8eeb88747ded42b6d4f" category="list-text">Kubernetesクラスタノード上のストレージプロトコルの依存関係を自動管理するためのフラグをインストーラに追加<block ref="1606f6268af560ddbfffdd3790afb4d2" prefix=" " category="inline-code"></block>。Amazon Linux 2023 iSCSIストレージプロトコルとの互換性をテストおよび検証済み</block>
   <block id="ee2cc86dbfffd3b53ed4701a6b458dfb" category="list-text">ノードの正常でないシャットダウンシナリオでのONTAP - NAS -エコノミーボリュームの強制切断のサポートが追加されました。</block>
@@ -5088,7 +5085,6 @@
   <block id="98d3ce5c789124fc9207b48d4d1e8fc7" category="paragraph">Trident Protect 24.10 は、データ保護操作中に KubeVirt VM ファイルシステムの一貫した状態を自動的に保証しません。Trident Protect 24.10 を使用して KubeVirt VM データを保護する場合は、データ保護操作の前に、ファイルシステムのフリーズ/アンフリーズ機能を手動で有効にする必要があります。これにより、ファイルシステムが一貫した状態になることが保証されます。</block>
   <block id="5ea5c247812e1dca5ff02ca853f05032" category="paragraph">Trident Protect 24.10を設定して、データ保護操作中にVMファイルシステムの凍結と解凍を管理することができます。<block ref="e0dd4c4b8aa16596df6c3f5cb36d3cdc" category="inline-link-macro-rx"></block>そして次のコマンドを使用します。</block>
   <block id="d9add54d9d6181f1b39ad4d1bc6451d0" category="paragraph-title">Trident Protect 24.10.1以降</block>
-  <block id="fc0a8846b51e68aef267b5f9ab2a081d" category="paragraph">Trident Protect 24.10.1 以降、 Trident Protect はデータ保護操作中に KubeVirt ファイルシステムを自動的にフリーズおよびアンフリーズします。オプションで、次のコマンドを使用してこの自動動作を無効にすることができます。</block>
   <block id="d65eac563b898cb7e41b8853a4fe1a3c" category="paragraph">ソースアプリケーションをHelmを使用してインストールした場合、<block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block>旗には特別な扱いが与えられます<block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block>ラベルキー。復元またはフェイルオーバー プロセス中に、 Trident Protect はこのラベルを宛先名前空間にコピーしますが、ソースからの値がソース名前空間と一致する場合は、値を宛先名前空間の値に更新します。この値がソース名前空間と一致しない場合は、変更されずに宛先名前空間にコピーされます。</block>
   <block id="186ed0696d9f28961b696fce39a1ab04" category="summary">Trident Protect を使用すると、 Tridentを使用してアプリケーションとアプリケーション データを保護できます。</block>
   <block id="a1fc1c89153021eb03a34941e90a9ac8" category="doc">Tridentプロテクトについて学ぶ</block>
@@ -5125,7 +5121,6 @@
   <block id="e0efc186d85cb700edf5d19dd5bc9496" category="open-title">NetAppからTrident Protectをインストールする</block>
   <block id="93459820f19a8251d29e060f09ece7bf" category="list-text">次のいずれかのコマンドを使用して、Helm を使用してTrident Protect をインストールします。交換する<block ref="b90b2ffedb63ca3bd8795caf4397715e" prefix=" " category="inline-code"></block>クラスター名。このクラスター名はクラスターに割り当てられ、クラスターのバックアップとスナップショットを識別するために使用されます。</block>
   <block id="eb462dda0e96614f18b56ebeffd4f4c3" category="list-text">Trident Protect を通常どおりインストールします。</block>
-  <block id="62d9a4720463384e2dba920f37795e8b" category="list-text">Trident Protect をインストールし、毎日スケジュールされているTrident Protect AutoSupportサポート バンドルのアップロードを無効にします。</block>
   <block id="272a3e0fc5f097dfcb8f549a6577a5f6" category="open-title">プライベートレジストリからTrident Protectをインストールする</block>
   <block id="357de3657314f9b2b3abd151f9d483ee" category="paragraph">Kubernetes クラスターがインターネットにアクセスできない場合は、プライベート イメージ レジストリからTrident Protect をインストールできます。これらの例では、括弧内の値を環境の情報に置き換えます。</block>
   <block id="8bb72cea6536be6ef0764dfc1d24b096" category="list-text">Trident Protect システム名前空間を作成します。</block>
@@ -5200,4 +5195,7 @@
   <block id="70568f333da28442c152ac2e1f71e1a0" category="sidebar">Trident Protectでアプリケーションを保護する</block>
   <block id="8545a0d7cdafff8da2dece1a851630dc" category="sidebar">Trident Protectの管理</block>
   <block id="83ff2dd2ff6a9ee85daa1b0fefef4019" category="sidebar">Trident Protectで実行フックを管理する</block>
+  <block id="a099f4b5b32bb2a3c98bf39fd2eada0d" category="paragraph">Trident Protect 24.10.1以降、Trident Protectはデータ保護操作中にKubeVirtファイルシステムを自動的にフリーズおよびアンフリーズします。オプションで、次のコマンドを使用してこの自動動作を無効にすることができます：</block>
+  <block id="f2492ecd5d283ce85dae0f4a9ee08a0a" category="inline-link-macro">Trident Protectの詳細はこちら</block>
+  <block id="fcea491f131646a6f887b5a13212cd84" category="paragraph"><block ref="30e9c40051e05c72dc744ea1f1015e1f" category="inline-link-macro-rx"></block>。</block>
 </blocks>

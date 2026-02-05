@@ -48,7 +48,7 @@ WARNING:  `tridentctl`インストーラのzipファイルに含まれているL
 ** ディザスタリカバリ
 ** アプリケーションのモビリティ
 +
-link:./trident-protect/learn-about-trident-protect.html["Trident protectの詳細"]です。
+link:./trident-protect/learn-about-trident-protect.html["Trident Protectの詳細はこちら"]。
 
 
 
