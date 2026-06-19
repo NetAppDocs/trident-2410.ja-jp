@@ -12,7 +12,7 @@ summary: TridentのREST APIを操作する場合は、RESTエンドポイント�
 
 
 [role="lead"]
-link:tridentctl.html["tridentctl コマンドとオプション"]Trident REST APIを操作する最も簡単な方法ですが、必要に応じてRESTエンドポイントを直接使用することもできます。
+link:../trident-managing-k8s/tridentctl.html["tridentctl コマンドとオプション"]はAstra Trident REST APIを操作する最も簡単な方法ですが、必要に応じてRESTエンドポイントを直接使用することもできます。
 
 
 

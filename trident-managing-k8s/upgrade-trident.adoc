@@ -74,7 +74,7 @@ Tridentを最初にインストールしたバージョンを確認するには�
 
 == ステップ3：アップグレード方法を選択します
 
-通常は、最初のインストールと同じ方法でアップグレードする必要がありますが、可能です。link:../trident-get-started/kubernetes-deploy.html#moving-between-installation-methods["インストール方法を切り替えます"]Tridentをアップグレードする方法は2つあります。
+一般的には、最初のインストールに使用したのと同じ方法でアップグレードする必要がありますが、link:../trident-install/kubernetes-deploy.html#moving-between-installation-methods["インストール方法を切り替えます"]。Trident をアップグレードするには 2 つのオプションがあります。
 
 * link:upgrade-operator.html["Tridentオペレータを使用してアップグレード"]
 +

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy-helm-mirror.html 
+permalink: trident-install/kubernetes-deploy-helm-mirror.html 
 keywords: deploy, Trident, operator, helm, helm chart, configuration, values, offline, air gap, gap, registry 
 summary: Tridentオペレータを導入し、Helmを使用してTridentをインストールできます。このプロセスは、Tridentに必要なコンテナイメージがプライベートレジストリに保存されているインストールに適用されます。 
 ---
@@ -40,10 +40,10 @@ Tridentオペレータを導入し、Helmを使用してTridentをインスト�
 
 Tridentを使用すると、link:https://artifacthub.io/packages/helm/netapp-trident/trident-operator["Helmチャート"^]Tridentオペレータを導入し、Tridentをワンステップでインストールできます。
 
-link:../trident-get-started/kubernetes-deploy.html["インストールの概要"]インストールの前提条件を満たしていることを確認し、環境に適したインストールオプションを選択してください。
+link:../trident-install/kubernetes-deploy.html["インストールの概要"]を確認して、インストールの前提条件を満たしていること、および環境に適したインストールオプションが選択されていることを確認します。
 
 .開始する前に
-あなたが必要とするlink:https://v3.helm.sh/["Helm バージョン 3"^]ことに加えてlink:../trident-get-started/kubernetes-deploy.html#before-you-deploy["導入の前提条件"]。
+link:../trident-install/kubernetes-deploy.html#before-you-deploy["導入の前提条件"]に加えてlink:https://v3.helm.sh/["Helm バージョン 3"^]が必要です。
 
 
 IMPORTANT: プライベートリポジトリにTridentをインストールするときに、スイッチを使用してリポジトリの場所を指定する場合は `imageRegistry`、リポジトリパスにを使用しないで `/netapp/`ください。

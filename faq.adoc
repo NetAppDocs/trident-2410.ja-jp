@@ -62,7 +62,7 @@ Trident構成に関する詳細情報を取得するには、コマンドを使�
 
 === Tridentはプライベートレジストリからのオフラインインストールをサポートしていますか。
 
-はい、Tridentはオフラインでインストールできます。を参照してください link:../trident-get-started/kubernetes-deploy.html["Tridentのインストールについて"^]。
+はい、Tridentはオフラインでインストールできます。link:../trident-install/kubernetes-deploy.html["Tridentのインストールについて"^]を参照してください。
 
 
 
@@ -86,13 +86,13 @@ TridentはKubernetes APIサーバから読み取り、アプリケーション�
 
 === Tridentで使用されるロールとPrivilegesを教えてください。
 
-TridentインストーラによってKubernetes ClusterRoleが作成され、KubernetesクラスタのPersistentVolume、PersistentVolumeClaim、StorageClass、およびSecretリソースに特定のアクセス権が付与されます。を参照してください link:../trident-get-started/kubernetes-customize-deploy-tridentctl.html["tridentctlのインストールをカスタマイズします"^]。
+Tridentインストーラは、KubernetesのClusterRoleを作成します。これにより、KubernetesクラスタのPersistentVolume、PersistentVolumeClaim、StorageClass、およびSecretリソースへの特定のアクセス権が付与されます。link:../trident-install/kubernetes-customize-deploy-tridentctl.html["tridentctlのインストールをカスタマイズします"^]を参照してください。
 
 
 
 === Tridentがインストールに使用するマニフェストファイルをローカルで生成できますか。
 
-必要に応じて、Tridentがインストールに使用するマニフェストファイルをローカルで生成および変更できます。を参照してください link:trident-get-started/kubernetes-customize-deploy-tridentctl.html["tridentctlのインストールをカスタマイズします"^]。
+必要に応じて、Tridentがインストールに使用する正確なマニフェストファイルをローカルで生成および変更できます。link:trident-install/kubernetes-customize-deploy-tridentctl.html["tridentctlのインストールをカスタマイズします"^]を参照してください。
 
 
 

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy.html 
+permalink: trident-install/kubernetes-deploy.html 
 keywords: deploy, Trident, methods, operator, tridentctl, helm, tanzu, vmware 
 summary: 'Tridentは、Tridentオペレータ（手動またはHelmを使用）またはを使用してインストールできます `tridentctl`。このトピックでは、適切なインストールプロセスを選択するための重要な情報を提供します。' 
 ---
@@ -40,7 +40,7 @@ Tridentをさまざまな環境や組織にインストールできるように�
 
 インストールパスに関係なく、次のものが必要です。
 
-* サポートされているバージョンのKubernetesと機能の要件を有効にして実行されている、サポートされるKubernetesクラスタに対するすべての権限。詳細については、を参照してlink:requirements.html["要件"]ください。
+* サポートされているバージョンの Kubernetes を実行し、機能要件が有効になっている、サポートされている Kubernetes クラスターに対する完全な権限。詳細については、link:/trident-get-started/requirements.html["要件"]を参照してください。
 * サポートされているネットアップストレージシステムへのアクセス。
 * Kubernetesワーカーノードすべてからボリュームをマウントできます。
 * 使用するKubernetesクラスタを管理するように設定された（OpenShiftを使用している場合は `oc`）Linuxホスト `kubectl`。
@@ -49,7 +49,7 @@ Tridentをさまざまな環境や組織にインストールできるように�
 
 
 
-TIP: に慣れていない場合はlink:../trident-concepts/intro.html["基本概念"^]、今すぐそれを行うのに最適な時期です。
+TIP: link:../trident-get-started/intro.html["基本概念"^]にまだ慣れていない場合は、今こそそれを実行する絶好の機会です。
 
 
 
@@ -61,7 +61,7 @@ TIP: に慣れていない場合はlink:../trident-concepts/intro.html["基本�
 
 === Trident演算子を使用する
 
-手動で導入する場合でも、Helmを使用する場合でも、Tridentオペレータはインストールを簡素化し、Tridentリソースを動的に管理するための優れた方法です。カスタムリソース（CR）の属性を使用する `TridentOrchestrator`こともできますlink:../trident-get-started/kubernetes-customize-deploy.html["Tridentのオペレータ環境をカスタマイズ"]。
+手動でのデプロイでもHelmを使用する場合でも、Tridentオペレーターはインストールを簡素化し、Tridentリソースを動的に管理する優れた方法です。link:../trident-install/kubernetes-customize-deploy.html["Tridentのオペレータ環境をカスタマイズ"] を使用して、 `TridentOrchestrator` カスタムリソース（CR）の属性を設定することもできます。
 
 Tridentオペレータには次のようなメリットがあります。
 
