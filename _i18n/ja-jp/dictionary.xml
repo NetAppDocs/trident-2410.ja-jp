@@ -207,9 +207,6 @@
   <block id="1a3a2b5e6c52142797bb5c00594e2a3c" category="inline-link-macro">23.04</block>
   <block id="4f00a05b361ef580687832a6a48984db" category="paragraph"><block ref="4f00a05b361ef580687832a6a48984db" category="inline-link-macro-rx"></block></block>
   <block id="fc7d05f9009e90b92a15aad926bca249" category="cell">2026年4月</block>
-  <block id="8dfda84fc7f59655e20a770603bf9231" category="inline-link-macro">23.01</block>
-  <block id="e0ed61e44672f0b6193055dd0719d240" category="paragraph"><block ref="e0ed61e44672f0b6193055dd0719d240" category="inline-link-macro-rx"></block></block>
-  <block id="7022ed6df71cc12fbd0576cef4df23fd" category="cell">2026年1月</block>
   <block id="40e41fb2db11266b8f751c0d5c67cba0" category="inline-link">ネットアップナレッジベース（ログインが必要）</block>
   <block id="62c93f738b926db77daa59d585fbfa48" category="paragraph">トラブルシューティング記事の包括的なリストについては、を参照してください<block ref="57f5c759ada931c6a2051314ca6ee99e" category="inline-link-rx"></block>。</block>
   <block id="1cf7168782187634fbc408c66b895dbc" category="section-title">コミュニティサポート</block>
@@ -539,7 +536,6 @@
   <block id="20a385c1dc7ef65425669840055b5330" category="list-text">推奨されるFlexGroupメンバー/ボリュームの最小サイズは100GiBです。</block>
   <block id="90bce6b2a4ca618777f172f6d51e69f1" category="list-text">FlexGroupボリュームではクローニングはサポートされていません。</block>
   <block id="971d29a2392e004ddd4263282b307e0c" category="inline-link">NetApp FlexGroupボリュームベストプラクティスおよび実装ガイド</block>
-  <block id="c78dec56d75d0606a3f38875c0e4b3de" category="paragraph">FlexGroupとFlexGroupに適したワークロードについては、を参照してください<block ref="fd26d63759e7985cecb8814cdedc189b" category="inline-link-rx"></block>。</block>
   <block id="b30b6b60171d85877ea91897bdd6faed" category="paragraph">同じ環境で高度な機能と大規模な拡張を実現するには、を使用してDocker Volume Pluginの複数のインスタンスを実行し、を使用して別の<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>インスタンスを実行し<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>ます。</block>
   <block id="1534742dd977c66a11d77eb23f10a5ab" category="section-title">Trident用のカスタムONTAPロール</block>
   <block id="c1781ac6bfd240f903c26ce4164a5d30" category="paragraph">Tridentで処理を実行するためにONTAP adminロールを使用する必要がないように、最小Privilegesを持つONTAPクラスタロールを作成できます。Tridentバックエンド構成にユーザ名を含めると、Trident作成したONTAPクラスタロールが使用されて処理が実行されます。</block>
@@ -2472,7 +2468,6 @@
   <block id="2734923c054f38d8ca66133414af4469" category="paragraph">短時間のバースト時に許容される最大 IOPS 。</block>
   <block id="e2eb05f1ef7720127ac371ceddc6f433" category="admonition">Max IOPS と Burst IOPS は最大 200 、 000 に設定できますが、実際のボリュームの最大パフォーマンスは、クラスタの使用量とノードごとのパフォーマンスによって制限されます。</block>
   <block id="fa9b1a3006e0ba9ad904c059c0b9add6" category="inline-link">SolidFire のサービス品質</block>
-  <block id="acd73d692aa90cacfe480ba8ba39cd5d" category="paragraph">ブロックサイズと帯域幅は、 IOPS に直接影響します。ブロックサイズが大きくなると、システムはそのブロックサイズを処理するために必要なレベルまで帯域幅を増やします。帯域幅が増えると、システムが処理可能な IOPS は減少します。QoSとパフォーマンスの詳細については、を参照してください<block ref="c8976c50ed9f016849fdce232777cd31" category="inline-link-rx"></block>。</block>
   <block id="b4657825f74ed622384dddf3a1d7d3b7" category="section-title">SolidFire 認証</block>
   <block id="9d3b5ff1cde828a63203f0465a34a967" category="paragraph">Element では、認証方法として CHAP とボリュームアクセスグループ（ VAG ）の 2 つがサポートされています。CHAP は CHAP プロトコルを使用して、バックエンドへのホストの認証を行います。ボリュームアクセスグループは、プロビジョニングするボリュームへのアクセスを制御します。CHAP はシンプルで拡張性に制限がないため、認証に使用することを推奨します。</block>
   <block id="fc9e812321a3f9b0eab1b702a08bab4e" category="admonition">Trident と強化された CSI プロビジョニングツールは、 CHAP 認証の使用をサポートします。VAG は、従来の CSI 以外の動作モードでのみ使用する必要があります。</block>
@@ -2490,7 +2485,6 @@
   <block id="36588ac65dcdb9b93916fb0ab708edb3" category="list-text"><block ref="36588ac65dcdb9b93916fb0ab708edb3" category="inline-link-rx"></block></block>
   <block id="ca7ab5ec4cba84fbef55956bb38759ce" category="paragraph">* Element ソフトウェア *</block>
   <block id="e809d9f88c2933195c4d2ab379c1b5dc" category="inline-link">SolidFire for Linux を設定しています</block>
-  <block id="ce0470e08aa854a8f93fa119434e8422" category="list-text"><block ref="ce0470e08aa854a8f93fa119434e8422" category="inline-link-rx"></block></block>
   <block id="d64280eb12d42bb67976ffba6d268e7b" category="paragraph">* NetApp HCI *</block>
   <block id="3bc72bedcc42d144356d4f933c48485d" category="inline-link">NetApp HCI 導入の前提条件</block>
   <block id="85bfffc1a1f7aaabd6cf58841640c308" category="list-text"><block ref="85bfffc1a1f7aaabd6cf58841640c308" category="inline-link-rx"></block></block>
@@ -2502,11 +2496,8 @@
   <block id="17efdd7d210511985714be299d595292" category="inline-link">SolidFire での MySQL に関するベストプラクティスです</block>
   <block id="d03b53d8ec563c37e16ee8c900a75b96" category="list-text"><block ref="d03b53d8ec563c37e16ee8c900a75b96" category="inline-link-rx"></block></block>
   <block id="3aefe1a041af945f1fe8673bf775057b" category="inline-link">NetApp SolidFire および Cassandra</block>
-  <block id="d7d36869f2f4aa1eb99a10008e153f20" category="list-text"><block ref="d7d36869f2f4aa1eb99a10008e153f20" category="inline-link-rx"></block></block>
   <block id="6e580111d3a8c12cdcd9522a4d3484c6" category="inline-link">SolidFire での Oracle のベストプラクティス</block>
-  <block id="f8b52d963f246a75dc6c8b78c954a4fd" category="list-text"><block ref="f8b52d963f246a75dc6c8b78c954a4fd" category="inline-link-rx"></block></block>
   <block id="6448cf37496207be126495e5b05851de" category="inline-link">SolidFire での PostgreSQL のベストプラクティスです</block>
-  <block id="b6780b7b2561935ff862fe7126cde751" category="list-text"><block ref="b6780b7b2561935ff862fe7126cde751" category="inline-link-rx"></block></block>
   <block id="b062996d6ca590abe798d3db75561f79" category="paragraph">すべてのアプリケーションに特定のガイドラインがあるわけではありません。NetAppチームと協力し、を使用して最新のドキュメントを見つけることが重要<block ref="4caccef7312f2c398bfbb419629c1a78" category="inline-link-rx"></block>です。</block>
   <block id="5ee08ab883e000ce6b739dbb0b6ff376" category="summary">Kubernetes システムの構成要素の詳細をご確認ください。</block>
   <block id="607ae6360b32f1bd6e559e915d414fab" category="doc">Kubernetes の概念</block>
@@ -3924,7 +3915,6 @@
   <block id="5224919a4ae5ccf610fb0ee74e4e7a94" category="inline-link">Trident AutoSupport の略</block>
   <block id="cc368c6d3d859a01a63550429f01cb9c" category="list-text">フラグを使用してログの保持期間を指定できます<block ref="86339c2ed773d5bd944b82d3086d3477" prefix=" " category="inline-code"></block>。例：<block ref="e238339d491d4840f7d8e509bdbb7b63" prefix=" " category="inline-code"></block>。この情報は、Tridentと一緒にインストールされたコンテナを介して収集および送信され<block ref="9d80ca17f097c8e365550f4036ccf0e3" prefix=" " category="inline-code"></block>ます。コンテナイメージはから入手できます<block ref="1b00454f0ab35dcec2ee1a0061efc6e5" category="inline-link-rx"></block>。</block>
   <block id="53084cad3d11df800502598c11e2d10b" category="inline-link">EULA</block>
-  <block id="b9a641d903e611a87a5e68ac7fdb0b84" category="list-text">Trident AutoSupport は、個人情報（ PII ）や個人情報を収集または送信しません。Tridentコンテナイメージ自体には適用されないが付属して<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block> います。データのセキュリティと信頼に対するネットアップの取り組みについて詳しくは、こちらをご覧<block ref="d3cc55401bc8303e01c6b0c43ba0733f" category="inline-link-rx"></block>ください。</block>
   <block id="b508f8888445cd57bcf910ed51afb0dd" category="paragraph">Tridentによって送信されるペイロードの例は次のようになります。</block>
   <block id="d2ec86f126f845e79aff07e70bf89472" category="list-text">AutoSupport メッセージは、ネットアップの AutoSupport エンドポイントに送信されます。プライベートレジストリを使用してコンテナイメージを格納している場合は、フラグを使用できます<block ref="53b228c1c8295f49b0c35325e14fcd6a" prefix=" " category="inline-code"></block>。</block>
   <block id="86c5a11fba83815412aec79f67f2d276" category="list-text">インストール YAML ファイルを生成してプロキシ URL を設定することもできます。これを行うには、を使用し<block ref="758aee5ba3aed3d4e9a31a16ea04b47a" prefix=" " category="inline-code"></block>てYAMLファイルを作成し、にコンテナの<block ref="eb6cdeddd28243c1552ea3b1061b4410" prefix=" " category="inline-code"></block>引数を<block ref="9d80ca17f097c8e365550f4036ccf0e3" prefix=" " category="inline-code"></block>追加し<block ref="46f08f4431bbd907a039e14ddf39cf5f" prefix=" " category="inline-code"></block>ます。</block>
@@ -5187,4 +5177,11 @@
   <block id="7011d1effc2f982a1f137b30ee928210" category="cell">プロトコル LIF の IP アドレス。*ONTAP NAS ドライバー*：NetApp は dataLIF を指定することを推奨します。指定しない場合、Trident は SVM から dataLIF を取得します。NFS マウント操作に使用する完全修飾ドメイン名（FQDN）を指定することで、ラウンドロビン DNS を作成し、複数の dataLIF 間で負荷分散を行うことができます。初期設定後でも変更可能です。参照<block ref="ac2d8c56a59b5d335127676599f45b62" category="inline-link-rx"></block>。*ONTAP SAN ドライバー*：iSCSI には指定しないでください。Trident は ONTAP Selective LUN Map を使用して、マルチパスセッションの確立に必要な iSCSI LIF を検出します。dataLIF が明示的に定義されている場合、警告が生成されます。Trident が IPv6 フラグを使用してインストールされている場合、IPv6 アドレスを使用するように設定できます。IPv6 アドレスは角括弧で囲んで定義する必要があります（例：[28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]）。</block>
   <block id="3505f295d6a44375d99670b663949ca1" category="paragraph"><block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>ユーティリティを使用して、<block ref="b5eda0a74558a342cf659187f06f746f" prefix=" " category="inline-code"></block>コマンドを実行すると、従属ボリュームを取得できます。詳細については、link:../trident-managing-k8s/tridentctl.html<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix="[" category="inline-code"></block>コマンドとオプション]を参照してください。</block>
   <block id="0aed33e870a02a203987e1f6cbeb75d8" category="list-text">Tridentを<block ref="5990d744db8a85d254742635736f0912" category="inline-link-rx"></block>で使用する際に発生する可能性のある一般的な問題は、テナントシークレットとクライアントシークレットが、権限が不十分なアプリ登録から取得された場合です。Trident要件の完全なリストについては、<block ref="afedf4ee56554ea6e6b54e6aa206680c" category="inline-link-macro-rx"></block>構成を参照してください。</block>
+  <block id="a0b117649fea6be51d852b2b72b26f09" category="paragraph">FlexGroups および FlexGroups に適したワークロードの詳細については、<block ref="02927f5d2a03bd36432bf247f38d70d3" category="inline-link-rx"></block>を参照してください。</block>
+  <block id="6a19e2418aa5a7364cafc452caa81d8b" category="paragraph">ブロック サイズと帯域幅は IOPS の数に直接影響します。ブロック サイズが大きくなるにつれて、システムはより大きなブロック サイズを処理するために必要なレベルまで帯域幅を増加させます。帯域幅が増加すると、システムが達成できる IOPS の数は減少します。QoS とパフォーマンスの詳細については、<block ref="967e30ab6321feb79b1f60d87637a623" category="inline-link-rx"></block>を参照してください。</block>
+  <block id="afd3e82da8a12df46005660c5b0458ab" category="list-text"><block ref="afd3e82da8a12df46005660c5b0458ab" category="inline-link-rx"></block></block>
+  <block id="3659f55627e86bd71f85eb663d155fdb" category="list-text"><block ref="3659f55627e86bd71f85eb663d155fdb" category="inline-link-rx"></block></block>
+  <block id="948ce0d4338b9761e83a5c41c4e05b77" category="list-text"><block ref="948ce0d4338b9761e83a5c41c4e05b77" category="inline-link-rx"></block></block>
+  <block id="2f40f77c3e54025e1174369f0cadf798" category="list-text"><block ref="2f40f77c3e54025e1174369f0cadf798" category="inline-link-rx"></block></block>
+  <block id="9ea1dc44c501f59786a0dd2c5ebc2d21" category="list-text">Trident AutoSupportは、個人を特定できる情報（PII）または個人情報を収集または送信しません。付属の<block ref="ea14b34590cee15ec565ad8fd8feca2e" category="inline-link-rx"></block>は、Tridentコンテナイメージ自体には適用されません。NetAppのデータセキュリティと信頼への取り組みの詳細については、<block ref="ea3b01bc03342a227ac7c6848f1e44fa" category="inline-link-rx"></block>を参照してください。</block>
 </blocks>
