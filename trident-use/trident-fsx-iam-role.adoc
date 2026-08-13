@@ -19,6 +19,7 @@ NOTE: AWS IAMロールを使用して認証するには、EKSを使用してKube
 
 
 
+[[create-aws-secret-manager-secret]]
 == AWS Secret Managerシークレットの作成
 
 次の例では、Trident CSIクレデンシャルを格納するAWSシークレットマネージャシークレットを作成します。
@@ -30,6 +31,7 @@ aws secretsmanager create-secret --name trident-secret --description "Trident CS
 ----
 
 
+[[create-iam-policy]]
 == IAMポリシーの作成
 
 次の例は、AWS CLIを使用してIAMポリシーを作成します。
@@ -72,6 +74,7 @@ policy.json:
 ----
 
 
+[[create-an-iam-role-for-the-service-account]]
 === サービスアカウント用のIAMロールを作成する
 
 [role="tabbed-block"]

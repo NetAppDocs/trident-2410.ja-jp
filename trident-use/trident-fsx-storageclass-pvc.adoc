@@ -16,10 +16,12 @@ Kubernetes StorageClassオブジェクトを設定してストレージクラス
 
 
 
+[[create-a-storage-class]]
 == ストレージクラスを作成する。
 
 
 
+[[configure-a-kubernetes-storageclass-object]]
 === Kubernetes StorageClassオブジェクトの設定
 
 では、 https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClassオブジェクト"^]そのクラスで使用されるプロビジョニングツールとしてTridentが指定され、ボリュームのプロビジョニング方法がTridentに指示されます。例：
@@ -41,6 +43,7 @@ parameters:
 
 
 
+[[create-a-storage-class]]
 === ストレージクラスを作成する。
 
 .手順
@@ -63,6 +66,7 @@ basic-csi    csi.trident.netapp.io   15h
 
 
 
+[[create-the-pv-and-pvc]]
 == PVおよびPVCの作成
 
 link:https://kubernetes.io/docs/concepts/storage/persistent-volumes/["永続ボリューム_"^]（PV）は、Kubernetesクラスタ上のクラスタ管理者によってプロビジョニングされる物理ストレージリソースです。 https://kubernetes.io/docs/concepts/storage/persistent-volumes["PersistentVolumeClaim_"^]（PVC）は、クラスタ上のPersistentVolumeへのアクセス要求です。
@@ -73,6 +77,7 @@ PVとPVCを作成したら、ポッドにボリュームをマウントできま
 
 
 
+[[sample-manifests]]
 === マニフェストの例
 
 .PersistentVolumeサンプルマニフェスト
@@ -141,6 +146,7 @@ storageClassName: protection-gold
 ====
 
 
+[[create-the-pv-and-pvc]]
 === PVおよびPVCの作成
 
 .手順
@@ -178,6 +184,7 @@ pvc-storage Bound  pv-name 2Gi      RWO                       5m
 
 
 
+[[trident-attributes]]
 == Trident属性
 
 これらのパラメータは、特定のタイプのボリュームのプロビジョニングに使用する Trident で管理されているストレージプールを決定します。

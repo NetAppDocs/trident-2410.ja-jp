@@ -28,12 +28,14 @@ TridentでFC機能を使用すると、次のことが可能になります。
 
 
 
+[[prerequisites]]
 == 前提条件
 
 FCに必要なネットワークとノードを設定します。
 
 
 
+[[network-settings]]
 === ネットワーク設定
 
 . ターゲットインターフェイスのWWPNを取得します。詳細については、を参照してください https://docs.netapp.com/us-en/ontap-cli//network-interface-show.html["network interface show"^] 。
@@ -57,6 +59,7 @@ FCに必要なネットワークとノードを設定します。
 
 
 
+[[prepare-the-worker-node]]
 === ワーカーノードを準備します
 
 Kubernetesクラスタ内のすべてのワーカーノードが、ポッド用にプロビジョニングしたボリュームをマウントできる必要があります。ワーカーノードをFC用に準備するには、必要なツールをインストールする必要があります。
@@ -133,14 +136,15 @@ sudo systemctl status multipath-tools
 ====
 
 
+[[create-a-backend-configuration]]
 == バックエンド構成の作成
 
 ドライバおよび `fcp`sanTypeとしてTridentバックエンドを作成します `ontap-san`。
 
 参照先：
 
-* link:..trident-use/ontap-san-prep.html["ONTAP SANドライバを使用してバックエンドを設定する準備をします"]
-* link:..trident-use/ontap-san-examples.html["ONTAP SANの設定オプションと例"^]
+* link:ontap-san-prep.html["ONTAP SANドライバを使用してバックエンドを設定する準備をします"]
+* link:ontap-san-examples.html["ONTAP SANの設定オプションと例"^]
 
 
 .FCヲシヨウシタバックエンドコウセイノレイ
@@ -162,11 +166,12 @@ spec:
 ----
 
 
+[[create-a-storage-class]]
 == ストレージクラスを作成する。
 
 詳細については、以下を参照してください。
 
-* link:..trident-docker/stor-config.html["ストレージ構成オプション"^]
+* link:../trident-docker/stor-config.html["ストレージ構成オプション"^]
 
 
 .ストレージクラスの例

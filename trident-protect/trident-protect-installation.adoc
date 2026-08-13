@@ -21,6 +21,7 @@ NOTE: デフォルトでは、 Trident Protect は、クラスターと管理対
 
 
 
+[[install-trident-protect]]
 == Trident Protectをインストールする
 
 [role="tabbed-block"]
@@ -171,6 +172,7 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 ====
 
 
+[[specify-trident-protect-container-resource-limits]]
 == Trident Protectコンテナのリソース制限を指定する
 
 Trident Protect をインストールした後、構成ファイルを使用してTrident Protect コンテナーのリソース制限を指定できます。リソース制限を設定すると、 Trident Protect 操作によって消費されるクラスターのリソースの量を制御できます。
